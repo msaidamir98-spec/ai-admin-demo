@@ -818,7 +818,7 @@
 <!-- DISCLAIMER -->
 <footer>
   <p class="disclaimer">
-    Демо. Клиника и цены&nbsp;— обезличенный пример. Ответы&nbsp;— реальный движок AI-администратора (RAG, отвечает строго по базе знаний бизнеса).
+    Демо. Клиника и цены&nbsp;— обезличенный пример. Ответы&nbsp;— реальный движок AI-администратора (LLM отвечает строго по базе знаний бизнеса).
   </p>
 </footer>
 
@@ -833,9 +833,6 @@
   var btnReset = document.getElementById('btnReset');
   var running = false;
   var timeout = null;
-
-  // Show all on load (pre-visible, no animation — scroll to see)
-  msgs.forEach(function (m) { m.classList.add('visible'); });
 
   function scrollBottom() {
     chatBody.scrollTop = chatBody.scrollHeight;
@@ -869,7 +866,7 @@
       // done
       running = false;
       btnPlay.disabled = false;
-      btnPlay.textContent = '✓ Диалог завершён';
+      btnPlay.textContent = '↻ Проиграть ещё раз';
       btnReset.style.display = 'inline-flex';
       return;
     }
@@ -897,6 +894,7 @@
 
   window.startAnimation = function () {
     if (running) return;
+    clearTimeout(timeout);
     hideAll();
     running = true;
     btnPlay.disabled = true;
@@ -917,13 +915,15 @@
     chatBody.scrollTop = 0;
   };
 
-  // Respect prefers-reduced-motion: show all immediately, hide play
+  // Respect prefers-reduced-motion: show all immediately, no autoplay
   if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     msgs.forEach(function (m) { m.classList.add('visible'); });
     btnPlay.style.display = 'none';
+    scrollBottom();
+  } else {
+    // Autoplay on load: dialog plays itself from the top
+    timeout = setTimeout(function () { window.startAnimation(); }, 800);
   }
-
-  scrollBottom();
 })();
 </script>
 
