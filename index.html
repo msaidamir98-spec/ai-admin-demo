@@ -44,8 +44,6 @@
     --transition: 200ms cubic-bezier(0.16,1,0.3,1);
   }
 
-  html { scroll-behavior: smooth; }
-
   body {
     font-family: var(--font);
     background: var(--bg);
@@ -54,7 +52,6 @@
     padding: 2rem 1rem 3rem;
   }
 
-  /* ── HERO ────────────────────────────────────────── */
   .hero {
     text-align: center;
     max-width: 600px;
@@ -97,7 +94,6 @@
     margin: 0 auto;
   }
 
-  /* ── PHONE CARD ──────────────────────────────────── */
   .phone-wrap {
     max-width: 440px;
     margin: 0 auto 2.5rem;
@@ -111,7 +107,6 @@
     border: 1px solid var(--border);
   }
 
-  /* chat header */
   .chat-header {
     background: var(--teal-700);
     padding: 1rem 1.15rem;
@@ -171,7 +166,6 @@
     50% { box-shadow: 0 0 0 4px rgba(74,222,128,0.15); }
   }
 
-  /* chat body */
   .chat-body {
     padding: 1rem 0.85rem;
     min-height: 420px;
@@ -181,14 +175,12 @@
     display: flex;
     flex-direction: column;
     gap: 0.6rem;
-    scroll-behavior: smooth;
   }
 
   .chat-body::-webkit-scrollbar { width: 4px; }
   .chat-body::-webkit-scrollbar-track { background: transparent; }
   .chat-body::-webkit-scrollbar-thumb { background: var(--teal-300); border-radius: 4px; }
 
-  /* messages */
   .msg {
     display: flex;
     flex-direction: column;
@@ -262,7 +254,6 @@
     box-shadow: var(--shadow-sm);
   }
 
-  /* escalation */
   .bubble-escalation {
     background: var(--warm-amber-bg);
     border: 1px solid var(--warm-amber-border);
@@ -284,7 +275,6 @@
     white-space: nowrap;
   }
 
-  /* intent badge */
   .intent-badge {
     font-size: 0.64rem;
     font-weight: 600;
@@ -308,7 +298,6 @@
     padding: 0 0.2rem;
   }
 
-  /* typing indicator */
   .typing-indicator {
     display: none;
     align-self: flex-start;
@@ -352,7 +341,6 @@
     40% { transform: scale(1); opacity: 1; }
   }
 
-  /* chat footer */
   .chat-footer {
     padding: 0.75rem 0.85rem;
     border-top: 1px solid var(--border);
@@ -387,7 +375,6 @@
 
   .fake-send svg { width: 16px; height: 16px; fill: #fff; }
 
-  /* ── PLAY BUTTON ─────────────────────────────────── */
   .controls {
     text-align: center;
     margin-bottom: 2.5rem;
@@ -449,7 +436,6 @@
     background: var(--teal-50);
   }
 
-  /* ── METRICS STRIP ───────────────────────────────── */
   .metrics-section {
     max-width: 600px;
     margin: 0 auto 2.5rem;
@@ -511,7 +497,6 @@
     line-height: 1.35;
   }
 
-  /* ── DISCLAIMER ──────────────────────────────────── */
   .disclaimer {
     max-width: 500px;
     margin: 0 auto;
@@ -523,7 +508,7 @@
     padding-top: 1.5rem;
   }
 
-  /* ===== CLINICAL PREMIUM · надстройка @cowork (только стиль; разметка/диалог/скрипт @cli не тронуты) ===== */
+  /* ===== CLINICAL PREMIUM · стилевая надстройка ===== */
   :root{
     --teal-900:#083f45; --teal-700:#0b5a62; --teal-600:#0e7c86; --teal-500:#14b8a6;
     --teal-300:#5eead4; --teal-100:#dcf2f1; --teal-50:#f1fafb;
@@ -557,18 +542,15 @@
 </head>
 <body>
 
-<!-- HERO -->
 <header class="hero">
   <div class="hero-label">Sales Demo · AI-администратор</div>
   <h1>Ни одной потерянной заявки —<br><em>даже в 23:00</em></h1>
   <p class="hero-sub">Реальный диалог с AI-администратором стоматологии: отвечает мгновенно, записывает на приём, а медицинские вопросы — передаёт врачу.</p>
 </header>
 
-<!-- PHONE CARD -->
 <div class="phone-wrap">
   <div class="phone-card">
 
-    <!-- header -->
     <div class="chat-header">
       <div class="chat-avatar">А</div>
       <div class="chat-header-info">
@@ -580,10 +562,8 @@
       </div>
     </div>
 
-    <!-- body -->
     <div class="chat-body" id="chatBody">
 
-      <!-- msg 1 -->
       <div class="msg msg-client" data-index="0">
         <div class="msg-row">
           <div class="bubble bubble-client">Здравствуйте! Сколько стоит поставить имплант?</div>
@@ -602,7 +582,6 @@
         <div class="msg-time">23:04 · ответ за 3&nbsp;с</div>
       </div>
 
-      <!-- msg 2 -->
       <div class="msg msg-client" data-index="2">
         <div class="msg-row">
           <div class="bubble bubble-client">А можно частями, в рассрочку?</div>
@@ -621,7 +600,6 @@
         <div class="msg-time">23:05 · ответ за 2&nbsp;с</div>
       </div>
 
-      <!-- msg 3 -->
       <div class="msg msg-client" data-index="4">
         <div class="msg-row">
           <div class="bubble bubble-client">Хочу записаться на консультацию</div>
@@ -641,7 +619,6 @@
         <div class="msg-time">23:06 · ответ за 3&nbsp;с</div>
       </div>
 
-      <!-- msg 4 -->
       <div class="msg msg-client" data-index="6">
         <div class="msg-row">
           <div class="bubble bubble-client">В субботу днём принимаете?</div>
@@ -660,7 +637,6 @@
         <div class="msg-time">23:07 · ответ за 2&nbsp;с</div>
       </div>
 
-      <!-- msg 5 -->
       <div class="msg msg-client" data-index="8">
         <div class="msg-row">
           <div class="bubble bubble-client">А где вы находитесь?</div>
@@ -679,7 +655,6 @@
         <div class="msg-time">23:07 · ответ за 2&nbsp;с</div>
       </div>
 
-      <!-- msg 6 — medical escalation -->
       <div class="msg msg-client" data-index="10">
         <div class="msg-row">
           <div class="bubble bubble-client">После удаления зуба опухла щека и поднялась температура, что делать?</div>
@@ -699,7 +674,6 @@
         <div class="msg-time">23:09 · ответ за 3&nbsp;с</div>
       </div>
 
-      <!-- msg 7 -->
       <div class="msg msg-client" data-index="12">
         <div class="msg-row">
           <div class="bubble bubble-client">Сколько стоит отбеливание зубов?</div>
@@ -719,7 +693,6 @@
         <div class="msg-time">23:10 · ответ за 2&nbsp;с</div>
       </div>
 
-      <!-- msg 8 -->
       <div class="msg msg-client" data-index="14">
         <div class="msg-row">
           <div class="bubble bubble-client">Вы делаете чистку от зубного камня?</div>
@@ -739,7 +712,6 @@
         <div class="msg-time">23:11 · ответ за 2&nbsp;с</div>
       </div>
 
-      <!-- msg 9 — out-of-scope -->
       <div class="msg msg-client" data-index="16">
         <div class="msg-row">
           <div class="bubble bubble-client">А вы кошек лечите?</div>
@@ -759,7 +731,6 @@
         <div class="msg-time">23:12 · ответ за 2&nbsp;с</div>
       </div>
 
-      <!-- typing indicator (hidden by default) -->
       <div class="typing-indicator" id="typingIndicator">
         <div class="mini-avatar">А</div>
         <div class="typing-bubble">
@@ -769,9 +740,8 @@
         </div>
       </div>
 
-    </div><!-- /chat-body -->
+    </div>
 
-    <!-- footer (decorative) -->
     <div class="chat-footer">
       <div class="fake-input">Написать сообщение…</div>
       <div class="fake-send">
@@ -779,16 +749,14 @@
       </div>
     </div>
 
-  </div><!-- /phone-card -->
-</div><!-- /phone-wrap -->
+  </div>
+</div>
 
-<!-- CONTROLS -->
 <div class="controls">
   <button class="btn-play" id="btnPlay" onclick="startAnimation()">▶ Проиграть диалог</button>
   <button class="btn-reset" id="btnReset" onclick="resetAnimation()" style="display:none">↺ Сначала</button>
 </div>
 
-<!-- METRICS -->
 <section class="metrics-section">
   <div class="metrics-label">Что увидел владелец</div>
   <div class="metrics-grid">
@@ -815,7 +783,6 @@
   </div>
 </section>
 
-<!-- DISCLAIMER -->
 <footer>
   <p class="disclaimer">
     Демо. Клиника и цены&nbsp;— обезличенный пример. Ответы&nbsp;— реальный движок AI-администратора (LLM отвечает строго по базе знаний бизнеса).
@@ -833,8 +800,13 @@
   var btnReset = document.getElementById('btnReset');
   var running = false;
   var timeout = null;
+  var userScrolled = false;
+
+  chatBody.addEventListener('wheel', function () { if (running) userScrolled = true; }, { passive: true });
+  chatBody.addEventListener('touchmove', function () { if (running) userScrolled = true; }, { passive: true });
 
   function scrollBottom() {
+    if (userScrolled) return;
     chatBody.scrollTop = chatBody.scrollHeight;
   }
 
@@ -848,7 +820,7 @@
     if (!m) { cb && cb(); return; }
     m.classList.add('visible');
     scrollBottom();
-    timeout = setTimeout(cb, 400);
+    timeout = setTimeout(cb, 550);
   }
 
   function showTyping(cb) {
@@ -857,13 +829,12 @@
     timeout = setTimeout(function () {
       typing.classList.remove('active');
       cb && cb();
-    }, 900);
+    }, 1000);
   }
 
   function animateStep(i) {
     if (!running) return;
     if (i >= msgs.length) {
-      // done
       running = false;
       btnPlay.disabled = false;
       btnPlay.textContent = '↻ Проиграть ещё раз';
@@ -880,7 +851,7 @@
         showMsg(i, function () {
           animateStep(i + 1);
         });
-      }, i === 0 ? 300 : 600);
+      }, i === 0 ? 300 : 800);
     } else if (isAgent) {
       showTyping(function () {
         showMsg(i, function () {
@@ -897,6 +868,7 @@
     clearTimeout(timeout);
     hideAll();
     running = true;
+    userScrolled = false;
     btnPlay.disabled = true;
     btnPlay.textContent = '⏳ Воспроизведение…';
     btnReset.style.display = 'none';
@@ -912,16 +884,15 @@
     btnPlay.disabled = false;
     btnPlay.textContent = '▶ Проиграть диалог';
     btnReset.style.display = 'none';
+    userScrolled = false;
     chatBody.scrollTop = 0;
   };
 
-  // Respect prefers-reduced-motion: show all immediately, no autoplay
   if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     msgs.forEach(function (m) { m.classList.add('visible'); });
     btnPlay.style.display = 'none';
-    scrollBottom();
+    chatBody.scrollTop = 0;
   } else {
-    // Autoplay on load: dialog plays itself from the top
     timeout = setTimeout(function () { window.startAnimation(); }, 800);
   }
 })();
